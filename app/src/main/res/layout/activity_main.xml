@@ -12,5 +12,6 @@
     <io.vov.vitamio.widget.VideoView
         android:id="@+id/vitamio_videoView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

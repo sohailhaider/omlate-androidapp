@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">omlate</string>
+    <string name="app_name">Omlate</string>
+    <string name="title_activity_login">Sign in</string>
+
 </resources>

@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         mVideoView = (VideoView) findViewById(R.id.vitamio_videoView);
-        path = "rtmp://184.72.239.149/vod/BigBuckBunny_115k.mov";
-//        path = "rtmp://192.168.10.2/omlate";
+        //path = "rtmp://184.72.239.149/vod/BigBuckBunny_115k.mov";
+        path = "rtmp://"+Config.Red5ServerIP+"/"+Config.Red5PublicSub+"/class1";
         mVideoView.setVideoPath(path);
         mVideoView.requestFocus();
     }
