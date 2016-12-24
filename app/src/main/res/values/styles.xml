@@ -1,7 +1,13 @@
 <resources>
-
+    <!--@android:style/Theme.Holo.NoActionBar.Fullscreen-->
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="FullTheme" parent="@android:style/Theme.Holo.NoActionBar.Fullscreen">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
