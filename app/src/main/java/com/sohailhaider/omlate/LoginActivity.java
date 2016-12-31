@@ -153,7 +153,13 @@ public class LoginActivity extends Activity {
                 if (result.getString("Status") == "true") {
                     String data = result.getString("Data");
                     JSONObject dataObj = new JSONObject(data);
-                    String FirstName = dataObj.getString("FirstName");
+
+                    Variables.getInstance().Username = dataObj.getString("Username");
+                    Variables.getInstance().Email = dataObj.getString("Email");
+                    Variables.getInstance().PhoneNo = dataObj.getString("PhoneNo");
+                    Variables.getInstance().FirstName = dataObj.getString("FirstName");
+                    Variables.getInstance().LastName = dataObj.getString("LastName");
+
                     startActivity(intent);
                 } else if (result.getString("Status") == "false") {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(LoginActivity.this);
@@ -167,7 +173,7 @@ public class LoginActivity extends Activity {
                 } catch (JSONException ex1) {
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(LoginActivity.this);
                     alertDialogBuilder.setMessage(response);
-                    alertDialogBuilder.setPositiveButton("OK!", null);
+                    alertDialogBuilder.setPositiveButton("Ok", null);
                     alertDialogBuilder.show();
                 }
             }

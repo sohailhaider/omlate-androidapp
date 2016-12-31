@@ -118,7 +118,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/mainheading"
-        android:text="Lectures Today"
+        android:text="Upcoming Lectures"
         android:textSize="25sp"
         android:gravity="center"
         android:id="@+id/textView"
@@ -136,5 +136,18 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
         android:layout_alignParentBottom="true" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar2"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2"
+        android:visibility="gone"/>
 
 </RelativeLayout>
