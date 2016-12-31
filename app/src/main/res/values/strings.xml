@@ -2,5 +2,9 @@
     <string name="app_name">Omlate</string>
     <string name="title_activity_login">Sign in</string>
     <string name="send_message">Send Message</string>
+    <string name="project_title">Omni Learning and Teaching Environment</string>
+    <string name="interactive_environment_for_learners">Interactive Environment for Learners</string>
+    <string name="logo">logo</string>
+    <string name="background_image_of_main_menu">background image of main menu</string>
 
 </resources>

@@ -36,7 +36,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        intent = new Intent(this, ChatRoom.class);
+        intent = new Intent(this, MainMenuActivity.class);
         setContentView(R.layout.activity_login);
         Button login = (Button) findViewById(R.id.loginbutton);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);

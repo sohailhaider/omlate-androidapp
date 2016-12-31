@@ -18,9 +18,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".ChatRoom"></activity>
-        <service android:name=".SignalRService">
-        </service>
+        <activity android:name=".ChatRoom" />
+
+        <service android:name=".SignalRService"></service>
+
+        <activity android:name=".MainMenuActivity"></activity>
     </application>
 
 </manifest>

@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:id="@+id/LoginLogo"
-        android:src="@drawable/logo"
+        android:src="@drawable/logolight"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
