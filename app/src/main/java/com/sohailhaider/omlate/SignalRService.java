@@ -89,7 +89,7 @@ public class SignalRService extends Service
      */
     public void sendMessage(String message) {
         String SERVER_METHOD_SEND = "Send";
-        mHubProxy.invoke(SERVER_METHOD_SEND, "1013", "androidUser", message);
+        mHubProxy.invoke(SERVER_METHOD_SEND, Variables.getInstance().LastClassID, Variables.getInstance().Username, message);
     }
 
     private void startSignalR() {
@@ -98,7 +98,7 @@ public class SignalRService extends Service
         Credentials credentials = new Credentials() {
             @Override
             public void prepareRequest(Request request) {
-                request.addHeader("androidUser", "1013");
+                request.addHeader(Variables.getInstance().Username, Variables.getInstance().LastClassID);
             }
         };
 
@@ -115,7 +115,7 @@ public class SignalRService extends Service
             e.printStackTrace();
             return;
         }
-        mHubProxy.invoke("Join", "1013");
+        mHubProxy.invoke("Join", Variables.getInstance().LastClassID);
 
 //        String HELLO_MSG = "Hello from Android!";
 //        sendMessage(HELLO_MSG);

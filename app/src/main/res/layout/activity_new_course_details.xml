@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/FullTheme"
+    tools:context="com.sohailhaider.omlate.NewCourseDetails">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView5"
+        android:layout_gravity="left|center_vertical"
+        android:src="@mipmap/mainmenu"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/background_image_of_main_menu"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:src="@drawable/logolight"
+        android:contentDescription="@string/logo"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView6">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="CS101-Computer Scineces"
+                android:id="@+id/courseTitle"
+                android:layout_below="@+id/imageView6"
+                android:layout_centerHorizontal="true"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="By Sohail Haider"
+                android:id="@+id/instructorName"
+                android:layout_below="@+id/courseTitle"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Date: "
+                android:id="@+id/textView2"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="10sp"
+                android:layout_below="@+id/instructorName"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12/01/2017"
+                android:id="@+id/startDate"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="10sp"
+                android:layout_below="@+id/instructorName"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End Date: "
+                android:id="@+id/textView3"
+                android:layout_below="@+id/textView2"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2"
+                android:layout_marginBottom="10sp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23/06/2017"
+                android:id="@+id/endDate"
+                android:layout_below="@+id/startDate"
+                android:layout_alignLeft="@+id/startDate"
+                android:layout_alignStart="@+id/startDate"
+                android:layout_alignRight="@+id/startDate"
+                android:layout_alignEnd="@+id/startDate"
+                android:layout_marginBottom="10sp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Credit Hours: "
+                android:id="@+id/textView4"
+                android:layout_below="@+id/textView3"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_marginBottom="10sp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:id="@+id/creditHours"
+                android:layout_below="@+id/endDate"
+                android:layout_alignLeft="@+id/endDate"
+                android:layout_alignStart="@+id/endDate"
+                android:layout_alignRight="@+id/endDate"
+                android:layout_alignEnd="@+id/endDate"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Code: "
+                android:id="@+id/textView5"
+                android:layout_below="@+id/textView4"
+                android:layout_alignLeft="@+id/textView4"
+                android:layout_alignStart="@+id/textView4"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Course Title: "
+                android:id="@+id/textView6"
+                android:layout_below="@+id/textView5"
+                android:layout_alignLeft="@+id/textView5"
+                android:layout_alignStart="@+id/textView5"
+                android:layout_marginTop="10sp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CS101"
+                android:id="@+id/courseCode"
+                android:layout_below="@+id/textView4"
+                android:layout_alignLeft="@+id/creditHours"
+                android:layout_alignStart="@+id/creditHours"
+                android:layout_alignRight="@+id/creditHours"
+                android:layout_alignEnd="@+id/creditHours"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Computer Sciences"
+                android:id="@+id/ctitle"
+                android:layout_alignTop="@+id/textView6"
+                android:layout_alignLeft="@+id/courseCode"
+                android:layout_alignStart="@+id/courseCode"
+                android:layout_alignRight="@+id/courseCode"
+                android:layout_alignEnd="@+id/courseCode"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enroll this Course"
+                android:id="@+id/enrollCourseButton"
+                android:background="@drawable/loginbutton"
+                android:layout_centerHorizontal="true"
+                android:padding="15sp"
+                android:layout_margin="20sp"
+                android:layout_below="@+id/ctitle" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar3"
+        android:layout_alignBottom="@+id/imageView6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_toRightOf="@+id/imageView6"
+        android:layout_toEndOf="@+id/imageView6"
+        android:visibility="gone"/>
+
+</RelativeLayout>

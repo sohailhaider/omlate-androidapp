@@ -13,6 +13,9 @@ public class Variables {
     public String PhoneNo;
     //
     public String LastClassID;
+    public boolean LoggedIn;
+    public CoursesListViewData LastSelectedCourse;
+    public Assessment LastAssessment;
 
     protected Variables(){}
 

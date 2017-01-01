@@ -3,6 +3,7 @@ package com.sohailhaider.omlate;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,11 +35,22 @@ public class LoginActivity extends Activity {
     Intent intent;
     String Password;
     ProgressBar progressBar;
+    public static final String PREFS_NAME = "MyPrefsFile";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         intent = new Intent(this, MainMenuActivity.class);
         setContentView(R.layout.activity_login);
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        boolean silent = settings.getBoolean("isLoggedIn", false);
+        if(silent) {
+            String Username = settings.getString("Username", "-1");
+            Variables.getInstance().Username = Username;
+            startActivity(intent);
+        }
+
+
         Button login = (Button) findViewById(R.id.loginbutton);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         login.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +92,18 @@ public class LoginActivity extends Activity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        boolean silent = settings.getBoolean("isLoggedIn", false);
+        if(silent) {
+            String Username = settings.getString("Username", "-1");
+            Variables.getInstance().Username = Username;
+            startActivity(intent);
+        }
 
+    }
     class LoginTask extends AsyncTask<Void, Void, String> {
 
         private Exception exception;
@@ -159,6 +183,17 @@ public class LoginActivity extends Activity {
                     Variables.getInstance().PhoneNo = dataObj.getString("PhoneNo");
                     Variables.getInstance().FirstName = dataObj.getString("FirstName");
                     Variables.getInstance().LastName = dataObj.getString("LastName");
+
+
+                    SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("Username", dataObj.getString("Username"));
+                    editor.putString("Email", dataObj.getString("Email"));
+                    editor.putString("PhoneNo", dataObj.getString("PhoneNo"));
+                    editor.putString("FirstName", dataObj.getString("FirstName"));
+                    editor.putString("LastName", dataObj.getString("LastName"));
+                    editor.putBoolean("isLoggedIn", true);
+                    editor.commit();
 
                     startActivity(intent);
                 } else if (result.getString("Status") == "false") {

@@ -9,9 +9,78 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sohailhaider.omlate.MainActivity">
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logoOnLive"
+        android:src="@drawable/logolight"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
     <io.vov.vitamio.widget.VideoView
         android:id="@+id/vitamio_videoView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_height="200dp"
+        android:layout_below="@+id/logoOnLive"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/vitamio_videoView">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="70dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/MsgeditText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send_message"
+                android:id="@+id/msgsendbutton"
+                android:layout_below="@+id/MsgeditText"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/scrollViewOnLive"
+                android:fillViewport="false"
+                android:layout_below="@+id/msgsendbutton"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/msgtextView" />
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
 </RelativeLayout>

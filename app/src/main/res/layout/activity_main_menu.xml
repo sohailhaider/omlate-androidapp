@@ -42,7 +42,7 @@
             android:gravity="center">
 
             <Button
-                android:text="All Courses"
+                android:text="Enroll New Course"
                 android:drawableTop="@drawable/all_courses"
                 android:id="@+id/button"
                 android:layout_column="0"
@@ -55,7 +55,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="Enrolled"
+                android:text="Enrolled Courses"
                 android:drawableTop="@drawable/enrolled_icon"
                 android:id="@+id/button2"
                 android:background="@drawable/menubutton"
@@ -63,42 +63,42 @@
                 android:layout_column="1"
                 android:layout_margin="2sp" />
 
-            <Button
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:drawableTop="@drawable/ic_suggested"
-                android:text="Suggestions"
-                android:id="@+id/button3"
-                android:background="@drawable/menubutton"
-                android:padding="10dp"
-                android:layout_column="2"
-                android:layout_margin="2sp" />
+            <!--<Button-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:drawableTop="@drawable/ic_suggested"-->
+                <!--android:text="Suggestions"-->
+                <!--android:id="@+id/button3"-->
+                <!--android:background="@drawable/menubutton"-->
+                <!--android:padding="10dp"-->
+                <!--android:layout_column="2"-->
+                <!--android:layout_margin="2sp" />-->
         </TableRow>
 
         <TableRow
             android:layout_weight="1"
             android:gravity="center">
 
-            <Button
-                android:text="Quizs"
-                android:drawableTop="@drawable/ic_quiz_monitor"
-                android:id="@+id/button4"
-                android:layout_column="0"
-                android:background="@drawable/menubutton"
-                android:padding="10dp"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="2sp" />
+            <!--<Button-->
+                <!--android:text="Quizs"-->
+                <!--android:drawableTop="@drawable/ic_quiz_monitor"-->
+                <!--android:id="@+id/button4"-->
+                <!--android:layout_column="0"-->
+                <!--android:background="@drawable/menubutton"-->
+                <!--android:padding="10dp"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:layout_margin="2sp" />-->
 
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/ic_quiz"
-                android:text="Assingment"
+                android:drawableTop="@drawable/ic_quiz_monitor"
+                android:text="Assessments"
                 android:id="@+id/button5"
                 android:background="@drawable/menubutton"
                 android:padding="10dp"
-                android:layout_column="1"
+                android:layout_column="0"
                 android:layout_margin="2sp" />
 
             <Button
@@ -106,10 +106,10 @@
                 android:layout_height="fill_parent"
                 android:drawableTop="@drawable/ic_logout_final"
                 android:text="Logout"
-                android:id="@+id/button6"
+                android:id="@+id/logoutButton"
                 android:background="@drawable/menubutton"
                 android:padding="10dp"
-                android:layout_column="2"
+                android:layout_column="1"
                 android:layout_margin="2sp" />
         </TableRow>
     </TableLayout>

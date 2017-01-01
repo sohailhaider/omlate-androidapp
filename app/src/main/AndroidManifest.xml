@@ -20,9 +20,14 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ChatRoom" />
 
-        <service android:name=".SignalRService"></service>
+        <service android:name=".SignalRService" />
 
-        <activity android:name=".MainMenuActivity"></activity>
+        <activity android:name=".MainMenuActivity" />
+        <activity android:name=".AllCoursesActivity" />
+        <activity android:name=".NewCourseDetails" />
+        <activity android:name=".EnrolledCourses" />
+        <activity android:name=".AllAssessments" />
+        <activity android:name=".AssessmentDetails"></activity>
     </application>
 
 </manifest>
