@@ -41,7 +41,7 @@ public class NewCourseDetails extends AppCompatActivity {
         GenericTV = (TextView) findViewById(R.id.instructorName);
         GenericTV.setText("By " + Variables.getInstance().LastSelectedCourse.getOfferedByID());
 
-        GenericTV = (TextView) findViewById(R.id.startDate);
+        GenericTV = (TextView) findViewById(R.id.startDateAssessment);
         GenericTV.setText(Variables.getInstance().LastSelectedCourse.getStartDate());
 
         GenericTV = (TextView) findViewById(R.id.endDate);

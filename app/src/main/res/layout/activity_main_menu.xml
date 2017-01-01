@@ -50,7 +50,8 @@
                 android:padding="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_margin="2sp"/>
+                android:layout_margin="2sp"
+                android:textColor="#ffffff" />
 
             <Button
                 android:layout_width="fill_parent"
@@ -61,7 +62,8 @@
                 android:background="@drawable/menubutton"
                 android:padding="10dp"
                 android:layout_column="1"
-                android:layout_margin="2sp" />
+                android:layout_margin="2sp"
+                android:textColor="#ffffff" />
 
             <!--<Button-->
                 <!--android:layout_width="fill_parent"-->
@@ -99,7 +101,8 @@
                 android:background="@drawable/menubutton"
                 android:padding="10dp"
                 android:layout_column="0"
-                android:layout_margin="2sp" />
+                android:layout_margin="2sp"
+                android:textColor="#ffffff" />
 
             <Button
                 android:layout_width="fill_parent"
@@ -110,7 +113,8 @@
                 android:background="@drawable/menubutton"
                 android:padding="10dp"
                 android:layout_column="1"
-                android:layout_margin="2sp" />
+                android:layout_margin="2sp"
+                android:textColor="#ffffff" />
         </TableRow>
     </TableLayout>
 

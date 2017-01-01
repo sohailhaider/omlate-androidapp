@@ -2,6 +2,7 @@ package com.sohailhaider.omlate;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -40,7 +41,7 @@ public class AllAssessments extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_assessments);
-        intent = new Intent(this, NewCourseDetails.class);
+        intent = new Intent(this, AssessmentDetails.class);
         HomeIntent = new Intent(this, MainMenuActivity.class);
         list = (ListView) findViewById(R.id.listView4);
         progressBar = (ProgressBar) findViewById(R.id.progressBar5);
@@ -52,9 +53,14 @@ public class AllAssessments extends AppCompatActivity {
                 View view = super.getView(position, convertView, parent);
                 TextView text1 = (TextView) view.findViewById(android.R.id.text1);
                 TextView text2 = (TextView) view.findViewById(android.R.id.text2);
-
-                text1.setText(listItems.get(position).getAssessmentTitle());
-                text2.setText(listItems.get(position).getDueDate());
+                String appending = "";
+                if(listItems.get(position).getSubmissions().indexOf(Variables.getInstance().Username.toString()) > -1 ) {
+                    appending = " - SUBMITTED";
+                //    text1.setTextColor(Color.GREEN);
+                //    text2.setTextColor(Color.BLUE);
+                }
+                text1.setText(listItems.get(position).getAssessmentTitle() + " (" + listItems.get(position).getCourseCode() + ")");
+                text2.setText(listItems.get(position).getOfferedByID() + " (" + listItems.get(position).getDueDate() + ")" + appending);
                 return view;
             }
         };
@@ -66,10 +72,18 @@ public class AllAssessments extends AppCompatActivity {
             public void onItemClick(AdapterView parent, View v, int position, long id)
             {
                 Assessment  item = (Assessment) parent.getItemAtPosition(position);
-                Variables.getInstance().LastAssessment = item;
+                if(item.getSubmissions().indexOf(Variables.getInstance().Username.toString()) > -1 ) {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AllAssessments.this);
+                    alertDialogBuilder.setMessage("Assessment already submitted!");
+                    alertDialogBuilder.setPositiveButton("Ok", null);
+                    alertDialogBuilder.show();
+                } else {
+                    Variables.getInstance().LastAssessment = item;
 
-                //Toast.makeText(getApplicationContext(), Variables.getInstance().LastSelectedCourse.toString(), Toast.LENGTH_SHORT).show();
-                startActivity(intent);
+                    //Toast.makeText(getApplicationContext(), Variables.getInstance().LastSelectedCourse.toString(), Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+                }
+
             }
         });
 

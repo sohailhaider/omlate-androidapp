@@ -49,7 +49,6 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="CS101-Computer Scineces"
                 android:id="@+id/courseTitle"
-                android:layout_below="@+id/imageView6"
                 android:layout_centerHorizontal="true"
                 android:gravity="center" />
 
@@ -77,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12/01/2017"
-                android:id="@+id/startDate"
+                android:id="@+id/startDateAssessment"
                 android:layout_toRightOf="@+id/textView2"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
@@ -101,11 +100,11 @@
                 android:layout_height="wrap_content"
                 android:text="23/06/2017"
                 android:id="@+id/endDate"
-                android:layout_below="@+id/startDate"
-                android:layout_alignLeft="@+id/startDate"
-                android:layout_alignStart="@+id/startDate"
-                android:layout_alignRight="@+id/startDate"
-                android:layout_alignEnd="@+id/startDate"
+                android:layout_below="@+id/startDateAssessment"
+                android:layout_alignLeft="@+id/startDateAssessment"
+                android:layout_alignStart="@+id/startDateAssessment"
+                android:layout_alignRight="@+id/startDateAssessment"
+                android:layout_alignEnd="@+id/startDateAssessment"
                 android:layout_marginBottom="10sp"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
