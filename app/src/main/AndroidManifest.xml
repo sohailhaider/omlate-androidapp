@@ -29,7 +29,8 @@
         <activity android:name=".NewCourseDetails" />
         <activity android:name=".EnrolledCourses" />
         <activity android:name=".AllAssessments" />
-        <activity android:name=".AssessmentDetails"></activity>
+        <activity android:name=".AssessmentDetails" />
+        <activity android:name=".Quiz"></activity>
     </application>
 
 </manifest>

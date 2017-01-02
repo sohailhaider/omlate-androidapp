@@ -39,7 +39,7 @@ public class LoginActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        intent = new Intent(this, MainMenuActivity.class);
+        intent = new Intent(this, Quiz.class);
         setContentView(R.layout.activity_login);
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);

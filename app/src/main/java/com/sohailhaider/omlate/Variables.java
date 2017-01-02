@@ -16,7 +16,7 @@ public class Variables {
     public boolean LoggedIn;
     public CoursesListViewData LastSelectedCourse;
     public Assessment LastAssessment;
-
+    public int LastQuizID;
     protected Variables(){}
 
     public static synchronized Variables getInstance(){
