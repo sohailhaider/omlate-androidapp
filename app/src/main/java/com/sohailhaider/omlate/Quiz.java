@@ -39,7 +39,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Quiz extends AppCompatActivity {
-    Intent intent, HomeIntent;
+    Intent intent, HomeIntent, classIntent;
     ProgressBar progressBar;
     int Duration;
     int QuizID;
@@ -69,6 +69,7 @@ public class Quiz extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         CurrentRefference = this;
         HomeIntent = new Intent(this, MainMenuActivity.class);
+        classIntent = new Intent(this, MainActivity.class);
         progressBar = (ProgressBar) findViewById(R.id.progressBar7);
         Questions = new ArrayList<Question>();
         OptionList = new ArrayList<Integer>();
@@ -91,7 +92,6 @@ public class Quiz extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
                 answers = "";
                 for(Question q: Questions) {
                     RadioGroup r = (RadioGroup) findViewById(Integer.parseInt(q.getQuestionId()));
@@ -107,31 +107,6 @@ public class Quiz extends AppCompatActivity {
                 new SaveQuizAttemptTask().execute();
             }
         });
-
-
-//
-//        // Add text
-//        TextView tv = new TextView(this);
-//        tv.setText("my text");
-//        int a =4+2;
-//        tv.setId(a);
-//
-//        ll.addView(tv);
-//
-//        // Add the LinearLayout element to the ScrollView
-//        sv.addView(ll);
-//
-//        // Display the view
-//        setContentView(v);
-
-
-
-
-        Variables.getInstance().LastQuizID = 3010;
-
-
-
-
         new GetQuizTask().execute();
     }
 
@@ -224,7 +199,7 @@ public class Quiz extends AppCompatActivity {
                         cdt.cancel();
                     }
 
-                    cdt = new CountDownTimer(5000, 1000) {
+                    cdt = new CountDownTimer(ticks, 1000) {
                         @Override
                         public void onTick(long millisUntilFinished) {
                             long seconds = (millisUntilFinished%60000)/1000;
@@ -294,31 +269,9 @@ public class Quiz extends AppCompatActivity {
 
         // Display the view
         setContentView(v);
-
-//                    JSONArray data = result.getJSONArray("Data");
-//                    for (int i=0; i<data.length(); i++) {
-//                        JSONObject actor = data.getJSONObject(i);
-//
-//                        CoursesListViewData d1 = new CoursesListViewData();
-//                        d1.setOfferedByID(actor.getString("OfferedByID"));
-//                        d1.setOffereCourseID(actor.getString("OfferedCourseID"));
-//                        d1.setCourseTitle(actor.getString("CourseTitle"));
-//                        d1.setCourseCode(actor.getString("CourseCode"));
-//                        d1.setStartDate(actor.getString("StartDate"));
-//                        d1.setFinishDate(actor.getString("FinishDate"));
-//                        d1.setCourseImage(actor.getString("CourseImage"));
-//                        d1.setCreditHours(actor.getString("CreditHours"));
-//
-//                        listItems.add(d1);
-//                        adapter.notifyDataSetChanged();
-//                    }
-
-
-                    //startActivity(intent);
                 } else if (result.getString("Status") == "false") {
                     Toast.makeText(getApplicationContext(), result.getString("Message"), Toast.LENGTH_SHORT).show();
-
-                    //startActivity(HomeIntent);
+                    startActivity(HomeIntent);
                 }
             } catch (JSONException ex) {
                 try {
@@ -415,7 +368,7 @@ public class Quiz extends AppCompatActivity {
                 JSONObject result = new JSONObject(response);
                 if (result.getString("Status") == "true") {
                     Toast.makeText(getApplicationContext(), result.getString("Message"), Toast.LENGTH_SHORT).show();
-                    startActivity(HomeIntent);
+                    startActivity(classIntent);
                 } else if (result.getString("Status") == "false") {
                     Toast.makeText(getApplicationContext(), result.getString("Message"), Toast.LENGTH_SHORT).show();
                     startActivity(HomeIntent);

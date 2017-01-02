@@ -36,6 +36,7 @@ public class SignalRService extends Service
 {
     private HubConnection mHubConnection;
     private HubProxy mHubProxy;
+    public boolean handshake = false;
     private Handler mHandler; // to display Toast message
     private final IBinder mBinder = new LocalBinder(); // Binder given to clients
     LocalBroadcastManager broadcaster = LocalBroadcastManager.getInstance(this);
@@ -125,17 +126,48 @@ public class SignalRService extends Service
                 new SubscriptionHandler2<String, String>() {
                     @Override
                     public void run(String name, String message) {
-                        final String finalMsg = name + ": " + message;
-                        // display Toast message
-                        mHandler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                Intent intent = new Intent(RESULT);
-                                if(finalMsg != null)
-                                    intent.putExtra(MESSAGE, finalMsg);
-                                broadcaster.sendBroadcast(intent);
-                            }
-                        });
+                        if(message.equals("-####!###!!!")) {
+                            final String finalMsg = message;
+                            handshake = true;
+                            // display Toast message
+                            mHandler.post(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    Intent intent = new Intent(RESULT);
+                                    if(finalMsg != null)
+                                        intent.putExtra(MESSAGE, finalMsg);
+                                    broadcaster.sendBroadcast(intent);
+                                }
+                            });
+                        }
+                        else if(handshake) {
+                            final String finalMsg = message;
+                            handshake = false;
+                            // display Toast message
+                            mHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent intent = new Intent(RESULT);
+                                    if(finalMsg != null)
+                                        intent.putExtra(MESSAGE, finalMsg);
+                                    broadcaster.sendBroadcast(intent);
+                                }
+                            });
+                        }
+                        else {
+                            final String finalMsg = name + ": " + message;
+                            // display Toast message
+                            mHandler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Intent intent = new Intent(RESULT);
+                                    if(finalMsg != null)
+                                        intent.putExtra(MESSAGE, finalMsg);
+                                    broadcaster.sendBroadcast(intent);
+                                }
+                            });
+                        }
                     }
                 }
                 , String.class, String.class);

@@ -22,11 +22,13 @@ import io.vov.vitamio.widget.VideoView;
 public class MainActivity extends AppCompatActivity {
     VideoView mVideoView;
     String path;
+    Intent QuizIntent;
     private final Context mContext = this;
     private SignalRService mService;
     private TextView msgBox;
     private EditText msg;
     private boolean mBound = false;
+    private boolean handshake = false;
     private BroadcastReceiver receiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         msgBox = (TextView) findViewById(R.id.msgtextView);
         msg = (EditText) findViewById(R.id.MsgeditText);
+        QuizIntent = new Intent(this, Quiz.class);
         msg.setHint("Message");
         mVideoView = (VideoView) findViewById(R.id.vitamio_videoView);
         //path = "rtmp://184.72.239.149/vod/BigBuckBunny_115k.mov";
@@ -49,7 +52,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String s = intent.getStringExtra(SignalRService.MESSAGE);
-                msgBox.append(s + "\n");
+                if(s.equals("-####!###!!!"))
+                    handshake = true;
+                else if(handshake) {
+                    Variables.getInstance().LastQuizID = Integer.parseInt(s);
+                    startActivity(QuizIntent);
+                    handshake = false;
+                }
+                else {
+                    msgBox.append(s + "\n");
+                }
             }
         };
 
